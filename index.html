@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Abel|Hind|Work+Sans" rel="stylesheet">
+        <script>
+            function openMenu(){
+                document.getElementById('menu-links').classList.toggle('open');
+            }
+            function transformX(x){
+                x.classList.toggle('change');
+            }
+            $(function() {
+              $('a[href*=#]').on('click', function(e) {
+                e.preventDefault();
+                $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 500, 'linear');
+              });
+            });
+        </script>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                outline: none;
+                box-sizing: border-box;
+            }
+            html, body{
+                height: 100%;
+            }
+            html{
+                overflow: scroll;
+                overflow-x: hidden;
+            }
+            #main {
+                min-height: 100%;
+                padding-bottom: 25px;
+            }
+            #content{
+                overflow: auto;
+            }
+            ::-webkit-scrollbar {
+                width: 0px;  /* remove scrollbar space */
+            }
+            body {
+                background-color: #0b4e79;
+                width: 100%;
+                min-width: 100%;
+            }
+            header{
+                height: 3.5rem;
+                width: 100%;
+                border-bottom: 2px #9db2cf solid;
+                box-shadow: 0px 2px 10px #9db2cf;
+                background-color: #0b4e79;
+                margin-top: 0px;
+            }
+            h1.header-name{
+                display: inline-block;
+                font-family: 'Work Sans', sans-serif;
+                font-size: 1rem;
+                font-variant-caps: petite-caps;
+                text-align: center;
+                text-shadow: 2px 2px 0px #002b4b;
+                float: left;
+                width: 25%;
+                height: 100%;
+                color: #FFF;
+                margin: 0px;
+                margin-top: 0px;
+                padding-top: 5px;
+            }
+            img.logo{
+                display: inline-block;
+                width: 15%;
+                height: 100%;
+                margin-left: 65px;
+            }
+            nav{
+                display: inline-block;
+                width: 13%;
+                height: 100%;
+                float: right;
+                margin: 0px;
+            }
+            span{
+                background-color: #FFF;
+                border-radius: 10px;
+                -o-border-radius: 10px;
+                -ms-border-radius: 10px;
+                -moz-border-radius: 10px;
+                -webkit-border-radius: 10px;
+            }
+            span.toggle-bar1{
+                display: block;
+                width: 60%;
+                height: 8%;
+                /*margin: 13px 10px 5px 13px;*/
+                margin: 5px;
+                margin-left: 8px;
+                margin-top: 16px;
+            }
+            span.toggle-bar2{
+                display: block;
+                width: 60%;
+                height: 8%;
+                /*margin: 5px 6px 5px 13px;*/
+                margin: 5px;
+                margin-left: 8px;
+                
+            }
+            span.toggle-bar3{
+                display: block;
+                width: 60%;
+                height: 9%;
+               /* margin: 5px 6px 5px 13px; */
+                margin: 5px;
+                margin-left: 8px;
+            }
+            .change .toggle-bar1{
+                -webkit-transform: rotate(-45deg) translate(-3px, 8px);
+                transform: rotate(-45deg) translate(-3px, 8px);
+            }
+            .change .toggle-bar2{
+                opacity: 0;
+            }
+            .change .toggle-bar3{
+                -webkit-transform: rotate(45deg) translate(-3px, -7px);
+                transform: rotate(45deg) translate(-3px, -7px);
+            }
+            div.span-container{
+                height: 95%;
+                width: 100%;
+                margin-top: 0px;
+            }
+            span{
+                padding: 1px;
+            }
+            /*div.slide-in-menu{
+                display: block;
+                width: 100%;
+                margin-top: 5px;
+            }*/
+            li{
+                /*border: 1px red solid; */
+                display: inline-block;
+                list-style-type: none;
+                color: #FFF;
+                width: 24%;
+            }
+            li a{
+                /*border: 1px solid;*/
+                font-family: 'Hind', sans-serif;
+                display: block;
+                color: #FFF;
+                text-decoration: none;
+                text-align: center;
+            }
+            li a:active{
+                background-color: #b0c9ed;
+            }
+            .closed{
+                position: relative;
+                right: -4000px;
+                /*transition: right .5s ease-out;
+                background: #9db2cf;*/
+            }
+            .open{
+                border-left: 3px #9db2cf solid;
+                border-right: 3px #9db2cf solid;
+                max-width: 100%;
+                right: 0;
+                /*transform: translateX(0%);*/
+                transition: right .5s ease-out, background 2s;
+                box-shadow: 0px 2px 10px #9db2cf;
+                margin-top: -2px;
+                background: #0b4e79;
+            }
+            
+            .introduction{
+                margin-top: 55px;
+                /*background-image: linear-gradient(#1d2740, #425073);*/
+                /*background-image: linear-gradient(#0b4e79, #1d2740);*/
+            }
+            section{
+                /*background-image: linear-gradient(#002b4b, #435174);*/
+                background-image: linear-gradient(#0b4e79, #cddff8);
+                height: 50vh;
+                
+            }
+            section.top-introduction{
+                /*border: 1px white solid; */
+                text-align: center;
+                width: 100%;
+                height: 100vh;
+                
+            }
+            p.introduction{
+                border-left: 2px #002b4b solid;
+                box-shadow: 2px 2px 32px #002b4b;
+                font-size: 1.10rem;
+                text-shadow: 0px 2px 0px #002b4b;
+                color: #fff;
+                font-family: 'Abel', sans-serif;
+                width: 75%;
+                margin-left: 0px;
+                margin: auto;
+                margin-top: 100px;
+                padding: 20px;
+                margin-bottom: 15px;
+            }
+            /*p.about-me{
+                /*border: 1px white solid;
+                font-weight: 500;
+                color: #fff;
+                font-family: 'Abel', sans-serif;
+                width: 75%;
+                margin-left: 47px;
+                
+            }*/
+            div.about-me-container{
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+            h2{
+                /*border: 1px white solid;*/
+                border-radius: 3px;
+                background-color: #9db2cf;
+                border-bottom: 2px #9db2cf solid;
+                box-shadow: 0px 2px 10px #9db2cf;
+                width: 50%;
+                font-family: 'Work Sans', sans-serif;
+                font-size: 1.5rem;
+                font-variant-caps: petite-caps;
+                text-shadow: 2px 2px 0px #002b4b;
+                color: #fff;
+                margin-left: 24%;
+            }
+            section.about-me{
+                background-image: linear-gradient(#cddff8, #0b4e79);
+                text-align: center;
+                display: block;
+                height: 100%;
+            }
+            p.about-me{
+                /*border-left: 2px #9db2cf solid;*/
+                display: block;
+                font-weight: 500;
+                color: #fff;
+                font-family: 'Abel', sans-serif;
+                box-shadow: 2px 2px 32px #002b4b;
+                width: 90%;
+                margin: auto;
+                padding: 15px;
+                margin-top: 10px;
+            }
+            .kayak{
+                /*border: 1px white solid;*/
+                box-shadow: 2px 2px 32px #002b4b;
+                display: block;
+                width: 90%;
+                margin-left: 18px;
+                
+            }
+            footer{
+                /*display: block;
+                position: fixed;
+                background-color: #0b4e79;
+                width: 100%;
+                height: 20%;*/
+                clear: both;
+                position: relative;
+                height: 40px;
+                bottom: 0px;
+                
+            }
+            img.github{
+                display: inline-block;
+                box-shadow: 2px 2px 5px #002b4b;
+                width: 15%;
+                height: 100%;
+                margin-left: 120px;
+                margin-bottom: 35px;
+            }
+            img.instagram{
+                display: inline-block;
+                box-shadow: 2px 2px 0px #002b4b;
+                width: 7%;
+                height: 100%;
+                border-radius: 8px;
+                margin-left: 25px;
+                margin-bottom: 35px;
+            }
+
+            /*#bottom {
+                position: relative;
+                margin-top: -180px;
+                height: 180px;
+                clear: both;
+            } */
+            div#sidenav{
+                overflow-x: hidden;
+            }
+            ul#menu-links{
+                border-bottom: 2px #9db2cf solid;
+                box-shadow: 0px 5px #d9e6f8;
+                z-index: 1;
+                height: 2.5rem;
+                padding-top: 7px;
+            }
+            a.ct-btn-scroll .ct-js-btn-scroll{
+                position: relative;
+                width: 49px;
+                height: 49px;
+                left: 0;
+                right: 0;
+                margin: auto;
+                border-radius: 50%;
+                z-index: 9;
+                -webkit-transition: background-color 0.25s ease-in-out;
+                transition: background-color 0.25s ease-in-out;
+            }
+            #footer{
+                position: relative;
+                margin-top: 25px;
+                clear: both;
+            }
+            @media screen and (orientation:landscape) {
+                header{
+                    height: 4rem;
+                }
+                h1.header-name{
+                    display: inline-block;
+                    font-family: 'Work Sans', sans-serif;
+                    font-size: 1.5rem;
+                    padding-top: 5px;
+                }
+                img.logo{
+                    width: 10%;
+                }
+                li a:hover{
+                    background-color: #b0c9ed;
+                }
+                img.logo{
+                    margin-left: 18%;
+                }
+                nav{
+                    padding-right: 10px;
+                }
+                span{
+                    float: right;
+                }
+                span.toggle-bar1{
+                    display: block;
+                    width: 55%;
+                    height: .3rem;
+                    margin-top: 15px;
+                }
+                span.toggle-bar2{
+                    display: block;
+                    width: 55%;
+                    height: .3rem;
+                }
+                span.toggle-bar3{
+                    display: block;
+                    width: 55%;
+                    height: .3rem;
+                }
+                .change .toggle-bar1{
+                    -webkit-transform: rotate(-45deg) translate(-3px, 8px);
+                    transform: rotate(-45deg) translate(-15px, 18px);
+                }
+                .change .toggle-bar3{
+                    -webkit-transform: rotate(45deg) translate(-3px, -7px);
+                    transform: rotate(45deg) translate(-3px, -7px);
+                }
+                .closed{
+                    right: -950px;
+                }
+                .open{
+                    right: 0;
+                }
+                ul#menu-links{
+                    height: 2.5rem;
+                    padding-top: 5px;
+                    font-size: 1.5rem;
+                }
+                /*main#main{
+                    padding-top: 125px;
+                }*/
+                p.introduction{
+                    font-size: 2.25rem;
+                }
+                #down-arrow{
+                    margin-top: 25px;
+                    height: 2.5rem;
+                    width: 2.5rem;
+                }
+                .kayak{
+                    margin: auto;
+                }
+                h2{
+                    font-size: 2rem;
+                }
+                p.about-me{
+                    height: 100%;
+                    font-size: 1.25rem;
+                }
+                img.github{
+                    margin-left: 30%;
+                    margin-right: 10%;
+                }
+                img.instagram{
+                    /*margin: auto;*/
+                }
+                div.social-media{
+                    align-content: center;
+                    margin: auto;
+                }
+        
+            }
+            @media screen and (min-width: 750px) {
+                header{
+                    height: 6rem;
+                }
+                h1.header-name{
+                    display: inline-block;
+                    font-family: 'Work Sans', sans-serif;
+                    font-size: 1.75rem;
+                    padding-top: 15px;
+                }
+                li a:hover{
+                    background-color: #b0c9ed;
+                }
+                img.logo{
+                    margin-left: 18%;
+                }
+                nav{
+                    padding-right: 10px;
+                }
+                span{
+                    float: right;
+                }
+                span.toggle-bar1{
+                    display: block;
+                    width: 60%;
+                    height: .3rem;
+                    margin-top: 30px;
+                }
+                span.toggle-bar2{
+                    display: block;
+                    width: 60%;
+                    height: .3rem;
+                }
+                span.toggle-bar3{
+                    display: block;
+                    width: 60%;
+                    height: .3rem;
+                }
+                .change .toggle-bar1{
+                    -webkit-transform: rotate(-45deg) translate(-3px, 8px);
+                    transform: rotate(-45deg) translate(-15px, 18px);
+                }
+                .change .toggle-bar3{
+                    -webkit-transform: rotate(45deg) translate(-3px, -7px);
+                    transform: rotate(45deg) translate(-3px, -7px);
+                }
+                .open{
+                    right: 0;
+                }
+                ul#menu-links{
+                    height: 2.5rem;
+                    padding-top: 0px;
+                    font-size: 1.5rem;
+                }
+                /*main#main{
+                    padding-top: 125px;
+                }*/
+                img.instagram{
+                    /*height: auto;*/
+                    border-radius: 20px;
+                }
+                p.introduction{
+                    font-size: 2.25rem;
+                }
+                #down-arrow{
+                    margin-top: 25px;
+                    height: 2.5rem;
+                    width: 2.5rem;
+                }
+                .kayak{
+                    margin: auto;
+                }
+                h2{
+                    font-size: 2rem;
+                }
+                p.about-me{
+                    height: 100%;
+                    font-size: 1.25rem;
+                }
+                img.github{
+                    margin-left: 37%;
+                    margin-right: 10%;
+                    width: 7%;
+                }
+                img.instagram{
+                    /*margin: auto;*/
+                    width: 5%;
+                }
+                div.social-media{
+                    align-content: center;
+                    margin: auto;
+                }
+            @media screen and (min-width: 1000px) {
+                header{
+                    height: 5.5rem;
+                    border: none;
+                }
+                h1.header-name{
+                    font-size: 2rem;
+                    padding-top: 10px;
+                    border: none;
+                }
+                img.logo{
+                    width: 7%;
+                    margin-left: 20%;
+                }
+                nav{
+                    display: none;
+                }
+                span.toggle-bar1{
+                    margin-top: 20px;
+                }
+                .closed{
+                    right: 0px;
+                }
+                .open{
+                    display: inline-block;
+                }
+                ul#menu-links{
+                    display: inline-block;
+                    width: 100%;
+                    height: 3.5rem;
+                    padding-top: 10px;
+                    font-size: 1.5rem;
+                    background: #0b4e79;
+                }
+                li a:hover{
+                    background-color: #b0c9ed;
+                    color: #002b4b;
+                }
+                p.introduction{
+                    font-size: 2rem;
+                }
+                #down-arrow{
+                    margin-top: 25px;
+                    height: 2.5rem;
+                    width: 2.5rem;
+                }
+                .kayak{
+                    width: 50%;
+                    height: auto;
+                }
+                #section1{
+                    padding-top: 75px;
+                }
+                h2{
+                    font-size: 2rem;
+                }
+                #about-me{
+                    width: 30%;
+                    margin: auto;
+                    margin-top: -1px;
+                }
+                img.github{
+                    margin-left: 40%;
+                    margin-right: 5%;
+                    width: 5%;
+                }
+                img.instagram{
+                    /*margin: auto;*/
+                    border-radius: 7px;
+                    width: 3%;
+                }
+                div#sidenav{
+                    margin-right: -40px;
+                }
+                 ul#menu-links{
+                     height: 100%;
+                     padding-top: 0px;
+                 }
+                @media screen and (min-width: 1300px) and (orientation:landscape) {
+                nav{
+                    padding-right: 25px;
+                }
+                span.toggle-bar1{
+                    margin-top: 30px;
+                }
+                header{
+                    height: 5.5rem;
+                    border: none;
+                }
+                h1.header-name{
+                    font-size: 2rem;
+                    padding-top: 10px;
+                    border: none;
+                }
+                img.logo{
+                    width: 7%;
+                    margin-left: 20%;
+                }
+                nav{
+                    display: none;
+                }
+                span.toggle-bar1{
+                    margin-top: 20px;
+                }
+                .closed{
+                    right: 0px;
+                }
+                .open{
+                    display: inline-block;
+                }
+                ul#menu-links{
+                    display: inline-block;
+                    width: 100%;
+                    height: 3.5rem;
+                    padding-top: 10px;
+                    font-size: 1.5rem;
+                    background: #0b4e79;
+                }
+                li a:hover{
+                    background-color: #b0c9ed;
+                    color: #002b4b;
+                }
+                p.introduction{
+                    font-size: 2rem;
+                }
+                #down-arrow{
+                    margin-top: 25px;
+                    height: 2.5rem;
+                    width: 2.5rem;
+                }
+                .kayak{
+                    width: 50%;
+                    height: auto;
+                }
+                #section1{
+                    padding-top: 75px;
+                }
+                h2{
+                    font-size: 2rem;
+                }
+                #about-me{
+                    width: 30%;
+                    margin: auto;
+                    margin-top: -1px;
+                }
+                @media screen and (min-width: 1700px) and (orientation: landscape) {
+                    header {
+                        /*background-color: black;*/
+                    }
+                    img.github{
+                        margin-left: 40%;
+                        margin-right: 10%;
+                        width: 3%;
+                }
+                    img.instagram{
+                    /*margin: auto;*/
+                        width: 1%;
+                    }
+                }
+        </style>
+        <title>Michael Enochs | Developer</title>
+    </head>
+    <body>
+        <header>
+            <h1 class="header-name">Michael Enochs</h1>
+            <img class="logo" src="img/logo_draft55_65.jpg" alt="Logo of a person working hard at a desk with laptop and books surrounding him.">
+            <nav onclick="openMenu()">
+                <div class="nav-toggle" onclick="transformX(this)">
+                    <span class="toggle-bar1"></span>
+                    <span class="toggle-bar2"></span>
+                    <span class="toggle-bar3"></span>
+                </div>
+            </nav>
+            <div id="sidenav" class="slide-in-menu">
+                <ul id="menu-links" class="closed">
+                    <li class="left-end"><a class="home" href="index.html">Home</a></li>
+                    <li><a class="projects" href="projects.html">Projects</a></li>
+                    <li><a class="bootstrap-index" href="bootstrap_index.html">Bootstrap</a></li>
+                    <li class="right-end"><a class="contact" href="contact_page.php">Contact</a></li>
+                </ul>
+
+            </div>
+        </header>
+        <main role="main" id="main">
+            <div id="content">
+                <section class="top-introduction" id="section1">
+                    <p class="introduction">
+                        Looking for a full stack developer?                
+                    </p>
+                    <a class="ct-btn-scroll ct-js-btn-scroll" href="#section2"><img id="down-arrow" alt="Arrow Down Icon" src="https://www.solodev.com/assets/anchor/arrow-down.png"></a>
+                </section>
+                <section class="about-me">
+                    <div id="section2" class="about-me-container">
+                        <h2 id="about-me">About Me</h2>
+                    </div>
+                    <br>
+                    <img src="img/kayakNaturenStuff.jpg" alt="Photograph of me kayaking in a lovely pink kayak." class="kayak">
+                    <p class="about-me">
+                            Hi, my name is Mike and I began programming in March 2018.  I started out coding about 12-16 hours a week.  The more I coded, the more I loved it, and the hours I spent coding increased.  For several months, I coded relentlessly and I feel confident in my abilities.  When I'm not coding I spend my time chasing an elite powerlifting total, reading, and occasionally, I will consume myself in drawing. I love the idea of hiking - I have a closet full of brand new gear I have yet to use.  Fingers crossed this is the summer I venture into some mountains.
+                    <br>
+                    <br>
+                            Check out my portfolio page to view my recent projects where I utilize HTML, CSS, JavaScript, Python, Django, SQLite, and MySQL. Also, I decided to have some fun and create an alternate Bootstrap version of my portfolio, which is viewable by clicking the "Bootstrap" link in the menu.       
+                    </p>
+                </section>
+            </div>
+        </main>
+        <footer id="footer">
+            <div class="social-media">
+                <a href="https://github.com/Michael-Scott-PC"><img class="github" src="img/GitHub_Logo_White_header_blue_bg.png" alt="Github Logo"></a>
+                <a href="https://www.instagram.com/mikey_e_/?hl=en"><img class="instagram" src="img/instagram_logo.jpg" alt="Instagram Logo"></a>
+            </div>
+        </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </body>
+</html>
